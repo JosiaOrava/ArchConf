@@ -7,4 +7,4 @@ These include my confs for hyprland, waybar and kitty at the moment. More will p
 ## Waybar
 
 
-## Kittyy
+## Kitty
