@@ -1,5 +1,5 @@
 # ArchLinux 
-Backup for my system including dotfiles, styling and package list.
+Backup for my system including dotfiles, styling, wallpapers and package list.
 
 ## Hyprland
 Consist two files:
