@@ -7,15 +7,21 @@
     "gtk-layer-shell": true,
     "height": 0,
     "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
             "clock",
 	    "keyboard-state"
     ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
     "modules-right": [
         "battery",
-        "pulseaudio"
+	"network",
+	"bluetooth",
+	"cpu",
+	"memory",
+	"temperature",
+        "pulseaudio",
+	"backlight"
     ],
 
     "hyprland/window": {
@@ -42,7 +48,7 @@
     "keyboard-state" : {
 	    "numlock": true,
 	    "capslock": true,
-	    "format": "{name} {icon}",
+	    "format": "{name} {icon} ",
 	    "format-icons": {
 		    "locked": "",
 		    "unlocked": ""
@@ -50,7 +56,41 @@
     },
     "tray": {
         "icon-size": 13,
-        "spacing": 10
+        "spacing": 5
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },"memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "bluetooth" : {
+	    "format": " {status}",
+	    "format-connected": " {device_alias}",
+	    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+	    "on-click": "blueman-manager"
+            
     },
     "clock": {
         "format": "{: %R   %d/%m}",
@@ -86,5 +126,10 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": [""]
     }
 },
