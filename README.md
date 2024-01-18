@@ -1,10 +1,18 @@
 # ArchLinux 
-These include my confs for hyprland, waybar and kitty at the moment. More will probably come when I get to configure my system more.
+Backup for my system including dotfiles, styling and package list.
 
 ## Hyprland
-
+Consist two files:
+* hyprland.conf | for hyprland WM
+* hyprpaper.conf | for wallpapers
 
 ## Waybar
-
+Dotfiles for waybar:
+* config.json | modules for waybar
+* style.css | styling for the waybar
 
 ## Kitty
+Dotfiles for kitty terminal emulator.
+
+## Pacman
+Backup of downloaded packages
