@@ -51,3 +51,6 @@ if [ -e "$kitty" ]; then
 else
 	echo "${error_color}Error: Kitty config not found${reset_color}"
 fi
+
+echo "Backup pacman packages"
+pacman -Qqe > ~/.config/backups/pacman/pkglist.txt
